@@ -7,8 +7,16 @@ class Navbar extends Component {
         return(
             <div className="navbar">
                 <div className="logo">SCRIPTOR</div>
+                <div className="loginpopup" id="popUp">
+                    <form action="/action_page.php" className="popup-container"></form>
+                </div>
+                <script>
+                    function openPopUp) {
+                        document.getElementById("popUp").style.display = "block";
+                    }
+                </script>
                 <ul>
-                    <li><a href="#login">LOG IN</a></li>
+                    <li onlick="openPopUp()"><a href="#login">LOG IN</a></li>
                     <li><a href="#signup">SIGN UP</a></li>
                     <li><a href="#about">ABOUT</a></li>
                 </ul>
