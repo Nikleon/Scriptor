@@ -75,3 +75,20 @@ body {
     padding: 10px 20px;
     margin-top: 20px;
 }
+
+
+/*** Pop-Ups ***/
+
+.loginpopup {
+    display: none:
+    position: fixed;
+    color: rgba(255,255,255,1);
+    border: none;
+    margin-top: 20px;
+}
+
+.popup-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: rgba(255,255,255,1);
+}
