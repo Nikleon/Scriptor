@@ -11,7 +11,7 @@ class Navbar extends Component {
                     <form action="/action_page.php" className="popup-container"></form>
                 </div>
                 <script>
-                    function openPopUp) {
+                    function openPopUp() {
                         document.getElementById("popUp").style.display = "block";
                     }
                 </script>
