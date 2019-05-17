@@ -1,25 +1,35 @@
 import React, {Component} from 'react';
 import './_Components.css';
+import Popup from './Popup';
 
 class Navbar extends Component {
+
+    constructor(props){
+        super(props);
+        this.state = { showPopup: false };
+    }
+
+    togglePopup() {
+        this.setState({showPopup: !this.state.showPopup});
+    }
+
     render(){
         // if user notlogged in
         return(
             <div className="navbar">
                 <div className="logo">SCRIPTOR</div>
-                <div className="loginpopup" id="popUp">
-                    <form action="/action_page.php" className="popup-container"></form>
-                </div>
-                <script>
-                    function openPopUp() {
-                        document.getElementById("popUp").style.display = "block";
-                    }
-                </script>
                 <ul>
-                    <li onlick="openPopUp()"><a href="#login">LOG IN</a></li>
+                    <li onClick={this.togglePopup.bind(this)}><a href="#login">LOG IN</a></li>
                     <li><a href="#signup">SIGN UP</a></li>
                     <li><a href="#about">ABOUT</a></li>
                 </ul>
+                {this.state.showPopup ?
+                <Popup
+                    text='Click to hide'
+                    closePopup={this.togglePopup.bind(this)}
+                />
+                : null
+                }
             </div>
         );
         // if logged in
